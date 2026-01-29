@@ -61,7 +61,7 @@ page = st.sidebar.radio(
     "选择章节",
     ["🎯 开场 & 核心理念", "📊 AI-Coding 方式", "💬 Prompt-Coding", 
      "🔧 Vibe-Coding 1.0", "👥 思考题", 
-     "🚀 Vibe-Coding 2.0", "✅ 分享总结 & 金句"]
+     "🚀 Vibe-Coding 2.0", "✅ 分享总结"]
 )
 
 # ============================================
@@ -783,7 +783,7 @@ elif page == "👥 思考题":
     3. 明确**禁止事项**：列出至少 3 项不允许 AI 做的事情
     4. **拆小步**：把目标任务拆成 3-5 个最小执行步骤
     
-    **输出：** 每组形成一个简单提示词
+    **输出：** 形成一个简单提示词
     """)
         
     st.markdown("### 💡 思考要点")
@@ -881,9 +881,7 @@ elif page == "🚀 Vibe-Coding 2.0":
     </p>
     </div>
     """, unsafe_allow_html=True)
-    
-    st.markdown("---")
-    
+        
     st.markdown("**在 1.0 阶段，我们通常是这样做的：**")
     st.markdown("""
     - 把页面怎么展示写在 prompt 里
@@ -902,8 +900,8 @@ elif page == "🚀 Vibe-Coding 2.0":
         <div class="warning-box">
         <h4 style="text-align: center;">1️⃣ 判断变多了</h4>
         <p style="text-align: center; font-size: 14px;">
-        原来只有"满不满"<br>
-        后来又多了"是否超时""是否重复"
+        原来只判断"预约满不满"<br>
+        后来又多了"预约是否超时/是否重复"
         </p>
         </div>
         """, unsafe_allow_html=True)
@@ -913,8 +911,8 @@ elif page == "🚀 Vibe-Coding 2.0":
         <div class="warning-box">
         <h4 style="text-align: center;">2️⃣ 判断开始复用</h4>
         <p style="text-align: center; font-size: 14px;">
-        不只是一个按钮在用<br>
-        多个页面、多个流程都会用到同一套判断
+        不只是“提交”按钮在用<br>
+        子页面或流程都会用到同一套判断
         </p>
         </div>
         """, unsafe_allow_html=True)
@@ -1114,17 +1112,15 @@ elif page == "🚀 Vibe-Coding 2.0":
 # ============================================
 # 页面 7: 分享总结 & 金句
 # ============================================
-elif page == "✅ 分享总结 & 金句":
-    st.title("分享总结 & 金句")
+elif page == "✅ 分享总结":
+    st.title("分享总结")
     
     st.markdown("""
     <div class="highlight-box">
     <h2 style="text-align: center;">🎯 三种方法核心对比</h2>
     </div>
     """, unsafe_allow_html=True)
-    
-    st.markdown("---")
-    
+        
     # 对比表格
     comparison_data = {
         "方法": ["Prompt-Coding", "Vibe-Coding 1.0", "Vibe-Coding 2.0"],
@@ -1153,57 +1149,6 @@ elif page == "✅ 分享总结 & 金句":
     
     df = pd.DataFrame(comparison_data)
     st.dataframe(df, use_container_width=True, hide_index=True)
-    
-    st.markdown("---")
-    
-    # 金句汇总
-    st.markdown("### 💡 核心金句")
-    
-    st.markdown("""
-    <div class="quote-box">
-    <h3 style="text-align: center; color: #1f77b4;">1️⃣ 总金句</h3>
-    <p style="font-size: 26px; text-align: center; font-weight: bold;">
-    让真正懂业务的人，第一次就能把想法直接「跑起来」
-    </p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        <div class="success-box">
-        <h4 style="text-align: center;">2️⃣ Prompt-Coding</h4>
-        <p style="font-size: 20px; text-align: center;">
-        我能凭直觉判断这个结果好坏<br>
-        就用 prompt-coding<br>
-        <span style="color: #666;">(解决 80% 问题)</span>
-        </p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col2:
-        st.markdown("""
-        <div class="success-box">
-        <h4 style="text-align: center;">3️⃣ Vibe-Coding 1.0</h4>
-        <p style="font-size: 20px; text-align: center;">
-        拆得越细<br>
-        AI 越像计算器<br>
-        你越像决策者
-        </p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    st.markdown("""
-    <div class="highlight-box">
-    <h4 style="text-align: center;">4️⃣ 进阶 Vibe-Coding 2.0</h4>
-    <p style="font-size: 20px; text-align: center;">
-    在 prompt 里反复强调同一批判断<br>
-    生怕 AI 错了<br>
-    <b>→ 进阶 2.0</b>
-    </p>
-    </div>
-    """, unsafe_allow_html=True)
     
     st.markdown("---")
     

@@ -15,5 +15,5 @@ if ! python3 -c "import streamlit" &> /dev/null; then
 fi
 
 # 启动应用
-echo "🚀 启动 AI-Coding 演示应用 (端口: 8502)..."
+echo "🚀 启动 AI-Coding 演示应用 (端口: 8501)..."
 streamlit run ai_coding_demo.py

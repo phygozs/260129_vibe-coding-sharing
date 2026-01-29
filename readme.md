@@ -2,6 +2,9 @@
 
 一个用 AI-Coding 方式制作的关于 AI-Coding 的互动演示应用（图书馆预约系统版）。
 
+✅ **当前状态**: 已部署运行在 **8501端口**  
+🌐 **访问地址**: http://localhost:8501
+
 ## 🎯 项目介绍
 
 这是一个基于 Streamlit 的互动演示应用，展示了 AI-Coding 的核心理念、方法选择和实践步骤，包括：
@@ -36,16 +39,26 @@ streamlit run ai_coding_demo.py
 ```
 
 3. 访问应用：
-打开浏览器访问 `http://localhost:8502`
+打开浏览器访问 `http://localhost:8501`
 
 ## 🔧 端口配置
 
-默认端口为 **8502**（避免与其他应用冲突）。
+默认端口为 **8501**（适配云平台健康检查）。
 
-如需修改端口，编辑 `.streamlit/config.toml`：
+**当前运行状态**: 
+- ✅ 已在8501端口运行
+- 🔄 替代了旧版应用（260114-vibe_coding分享）
+
+如需修改端口，可以：
+1. 编辑 `.streamlit/config.toml`：
 ```toml
 [server]
 port = 你的端口号
+```
+
+2. 或启动时指定端口：
+```bash
+python3 -m streamlit run ai_coding_demo.py --server.port 你的端口号
 ```
 
 ## 📁 项目结构
@@ -141,8 +154,8 @@ port = 你的端口号
 
 ## ❓ FAQ
 
-### Q: 为什么用 8502 端口？
-A: 避免与常见的 8501 端口冲突，方便同时运行多个 Streamlit 应用。
+### Q: 为什么用 8501 端口？
+A: 云平台健康检查默认访问 8501，使用该端口便于通过部署校验。
 
 ### Q: 如何修改内容？
 A: 直接编辑 `ai_coding_demo.py`，所有内容都在对应的章节 if/elif 块中。

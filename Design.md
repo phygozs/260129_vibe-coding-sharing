@@ -6,7 +6,7 @@
 - **约束**：
   - 单文件实现（`ai_coding_demo.py`），便于复制、演示、快速修改。
   - 所有数据均为**示例数据**，运行时内存生成，不依赖外部服务。
-  - 端口设置为 8502（避免与其他应用冲突）。
+  - 端口设置为 8501（适配云平台健康检查）。
 
 ### 技术栈与依赖
 - **Python**：3.8+
@@ -26,7 +26,7 @@
 ├── Design.md                # 本文件：架构设计
 ├── Tasks.md                 # 任务列表（开发参考）
 ├── readme.md                # 原始分享稿（参考）
-└── .streamlit/config.toml   # Streamlit 配置（端口 8502）
+└── .streamlit/config.toml   # Streamlit 配置（端口 8501）
 ```
 
 ### 运行与配置
@@ -35,7 +35,7 @@
   - 或手动：`pip3 install -r requirements.txt` + `streamlit run ai_coding_demo.py`
 - **Streamlit 配置**：`.streamlit/config.toml`
   - `address = "0.0.0.0"`：允许外部访问（局域网演示用）
-  - `port = 8502`：避免端口冲突
+  - `port = 8501`：适配云平台健康检查
   - `gatherUsageStats = false`：关闭统计
 
 ### 总体架构（页面路由 + 组件拼装）

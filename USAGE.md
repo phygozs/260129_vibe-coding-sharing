@@ -31,11 +31,11 @@ python3 -m streamlit run ai_coding_demo.py
 ```
 
 3. 访问应用：
-打开浏览器访问 `http://localhost:8502`
+打开浏览器访问 `http://localhost:8501`
 
 ## 🔧 端口配置
 
-默认端口为 **8502**（避免与其他应用冲突）。
+默认端口为 **8501**（适配云平台健康检查）。
 
 如需修改端口，编辑 `.streamlit/config.toml`：
 ```toml
@@ -120,8 +120,8 @@ port = 你的端口号
 
 ## ❓ FAQ
 
-### Q: 为什么用 8502 端口？
-A: 避免与常见的 8501 端口冲突，方便同时运行多个 Streamlit 应用。
+### Q: 为什么用 8501 端口？
+A: 云平台健康检查默认访问 8501，使用该端口便于通过部署校验。
 
 ### Q: 如何修改内容？
 A: 直接编辑 `ai_coding_demo.py`，所有内容都在对应的章节 if/elif 块中。
@@ -136,7 +136,7 @@ pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 A: 检查以下几点：
 1. Python 版本是否 >= 3.8
 2. 依赖是否正确安装
-3. 端口 8502 是否被占用
+3. 端口 8501 是否被占用
 
 ### Q: 如何停止应用？
 A: 在终端中按 `Ctrl+C`
